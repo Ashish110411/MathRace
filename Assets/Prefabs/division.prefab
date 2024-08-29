@@ -54,7 +54,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 46d55c7ecf6e4314abef67bdbd0bb8a9, type: 3}
       propertyPath: m_TagString
-      value: Player
+      value: Division
       objectReference: {fileID: 0}
     - target: {fileID: 1151388028547126963, guid: 46d55c7ecf6e4314abef67bdbd0bb8a9, type: 3}
       propertyPath: m_LocalPosition.z
@@ -75,6 +75,10 @@ PrefabInstance:
     - target: {fileID: 1151388028547126963, guid: 46d55c7ecf6e4314abef67bdbd0bb8a9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 8164078558771037576, guid: 46d55c7ecf6e4314abef67bdbd0bb8a9, type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

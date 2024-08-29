@@ -5,6 +5,11 @@ TagManager:
   serializedVersion: 2
   tags:
   - ScoreManager
+  - Addition
+  - Subtraction
+  - Multiplication
+  - Division
+  - GameOverUI
   layers:
   - Default
   - TransparentFX

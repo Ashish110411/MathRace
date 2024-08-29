@@ -4,7 +4,7 @@ using TMPro;
 public class ScoreManager : MonoBehaviour
 {
     public TextMeshProUGUI scoreText; // Reference to the TextMeshProUGUI component
-    private int score = 0; // Class-level variable to track the score
+    public int score = 0; // Class-level variable to track the score
 
     void Start()
     {

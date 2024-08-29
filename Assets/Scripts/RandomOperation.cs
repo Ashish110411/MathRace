@@ -9,6 +9,7 @@ public class RandomOperation : MonoBehaviour
     public TextMeshProUGUI yText;
     
     public TextMeshProUGUI zText;
+    public char Operator;
     
 
     public void GenerateRandomEquation()
@@ -23,6 +24,7 @@ public class RandomOperation : MonoBehaviour
         // Randomly select an operator
         int operatorIndex = Random.Range(0, operators.Length);
         char selectedOperator = operators[operatorIndex];
+        Operator = selectedOperator; 
 
         // Initialize the result variable
         int z = 0;
