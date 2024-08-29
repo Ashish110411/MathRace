@@ -1,23 +1,21 @@
 using UnityEngine;
-using TMPro; // Include this for TextMeshPro
+using TMPro;
 
 public class RandomOperation : MonoBehaviour
 {
-    public TextMeshProUGUI xText; // Reference to the TextMeshProUGUI component for x
-    public TextMeshProUGUI yText; // Reference to the TextMeshProUGUI component for y
-    public TextMeshProUGUI resultText; // Reference to the TextMeshProUGUI component for z
+    
+    public TextMeshProUGUI xText;
+    
+    public TextMeshProUGUI yText;
+    
+    public TextMeshProUGUI zText;
+    
 
-    void Start()
-    {
-        // Generate and display random numbers and operator
-        GenerateAndDisplayRandomOperation();
-    }
-
-    public void GenerateAndDisplayRandomOperation()
+    public void GenerateRandomEquation()
     {
         // Generate two random integers between 1 and 100 (inclusive)
-        int x = Random.Range(1, 101);
-        int y = Random.Range(1, 101);
+        int x = Random.Range(1, 10);
+        int y = Random.Range(1, 10);
 
         // Array of operators
         char[] operators = new char[] { '+', '-', '*', '/' };
@@ -28,7 +26,7 @@ public class RandomOperation : MonoBehaviour
 
         // Initialize the result variable
         int z = 0;
-
+        
         switch (selectedOperator)
         {
             case '+':
@@ -44,26 +42,22 @@ public class RandomOperation : MonoBehaviour
                 // Handle division by ensuring y is not zero and x is divisible by y
                 while (y == 0 || x % y != 0)
                 {
-                    y = Random.Range(1, 101); // Regenerate y if conditions aren't met
+                    y = Random.Range(1, 10); // Regenerate y if conditions aren't met
                 }
                 z = x / y;
                 break;
         }
 
-        // Update the TextMeshProUGUI components with the values
-        if (xText != null)
-        {
-            xText.text =x.ToString();
-        }
+        // Update TextMeshPro objects with the new equation
+        xText.text = x.ToString();
+        yText.text = y.ToString();
+        zText.text = z.ToString();
 
-        if (yText != null)
-        {
-            yText.text = y.ToString();
-        }
-
-        if (resultText != null)
-        {
-            resultText.text =z.ToString();
-        }
+        // Optionally log the equation for debugging
+        // Debug.Log(x + " " + selectedOperator + " " + y + " = " + z);
+    }
+    void Start()
+    {
+        GenerateRandomEquation();
     }
 }
