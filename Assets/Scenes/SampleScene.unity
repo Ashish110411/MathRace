@@ -289,13 +289,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 915955861}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.4, z: 0}
-  m_LocalScale: {x: 0.30000007, y: 0.3, z: 0.30000007}
+  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: -0.5, y: 0.45, z: 1}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 97060278}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!114 &915955863
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -309,10 +309,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   operators:
-  - {fileID: 8136492400815496508, guid: 712315f34dc11f84f807bc961831f1cf, type: 3}
-  - {fileID: 4370150438442104650, guid: 204efdcb19599534cb22b68e9be7ff19, type: 3}
-  - {fileID: 1339813235735320235, guid: ff14d50129a9366459b0312416351733, type: 3}
-  - {fileID: 341340848607061399, guid: 78abef2a9b58e57458d4c9bc374e1c8c, type: 3}
+  - {fileID: 2067819762825246516, guid: e179fe42fae684a4e909c05d6a44b5ac, type: 3}
+  - {fileID: 3005620684477011939, guid: 814cf73b55b8c244d9b04bdfef8ed7b5, type: 3}
+  - {fileID: 7885119876804252361, guid: 371bfb7dee4c3084f911a4b55e84fc62, type: 3}
+  - {fileID: 81802790498187930, guid: b7f30ed8373efe34dbcc9e6e60546e10, type: 3}
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -399,7 +399,7 @@ Transform:
   m_GameObject: {fileID: 963194225}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -2}
+  m_LocalPosition: {x: -0.5, y: 1, z: -8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -435,9 +435,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path:
-  - {fileID: 1791731380265416573, guid: 1846f1e893c3bf54f879058e8c5ff81b, type: 3}
+  - {fileID: 3921999214376071543, guid: 8a230b99ff7363848b6f5cb61a248fa6, type: 3}
   zSpawn: 0
-  TileLength: 21
+  TileLength: 24
   numberOfTiles: 3
   Player: {fileID: 97060278}
 --- !u!4 &1403862231
