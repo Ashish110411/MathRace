@@ -32,7 +32,6 @@ public class PathManager : MonoBehaviour
             SpawnTile(Random.Range(0, Path.Length));
             DeleteTile();
         }
-
     }
     public void SpawnTile(int tileIndex)
     {

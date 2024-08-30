@@ -12,9 +12,8 @@ public class RandomOperation : MonoBehaviour
     {
         int x = 0, y = 0, z = 0;
         char[] operators = new char[] { '+', '-', '*', '/' };
-        ValidOperators = new char[2]; // Array to store up to 2 valid operators
-
-        // Randomly select an operator to start with
+        ValidOperators = new char[2];
+        
         int operatorIndex = Random.Range(0, operators.Length);
         char selectedOperator = operators[operatorIndex];
 
@@ -26,10 +25,9 @@ public class RandomOperation : MonoBehaviour
                 z = x + y;
                 ValidOperators[0] = '+';
                 break;
-
             case '-':
                 x = Random.Range(1, 10);
-                y = Random.Range(1, x + 1); // Ensure y <= x to avoid negative results
+                y = Random.Range(1, x + 1);
                 z = x - y;
                 ValidOperators[0] = '-';
 
@@ -38,7 +36,6 @@ public class RandomOperation : MonoBehaviour
                     ValidOperators[1] = '/';
                 }
                 break;
-
             case '*':
                 x = Random.Range(1, 10);
                 y = Random.Range(1, 10);
@@ -50,26 +47,26 @@ public class RandomOperation : MonoBehaviour
                     ValidOperators[1] = '/';
                 }
                 break;
-
             case '/':
                 y = Random.Range(1, 10);
                 z = Random.Range(1, 10);
-                x = y * z; // Ensure x is perfectly divisible by y
+                x = y * z;
                 ValidOperators[0] = '/';
 
-                if (x - y == z) // If subtraction could also work
+                if (x - y == z)
                 {
                     ValidOperators[1] = '-';
                 }
+                else if (x * y == z)
+                {
+                    ValidOperators[1] = '*';
+                }
                 break;
         }
-
-        // Update the TextMeshPro objects with the values
         xText.text = x.ToString();
         yText.text = y.ToString();
         zText.text = z.ToString();
     }
-
     void Start()
     {
         GenerateRandomEquation();

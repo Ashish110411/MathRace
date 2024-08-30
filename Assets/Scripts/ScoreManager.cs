@@ -11,7 +11,7 @@ public class ScoreManager : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        IncrementScore(); // Call the method to increment the score
+        IncrementScore();
     }
     public void IncrementScore()
     {

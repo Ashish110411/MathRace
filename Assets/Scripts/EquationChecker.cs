@@ -17,7 +17,6 @@ public class EquationChecker : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             bool isCorrect = false;
-
             foreach (char validOperator in randomOperation.ValidOperators)
             {
                 if (validOperator == '+')
