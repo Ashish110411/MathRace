@@ -17,7 +17,6 @@ public class GameManager : MonoBehaviour
             playerMovement.speed = 0;
             if (Input.GetMouseButton(1))
             {
-                
                 gameoverScript.SetActive(false);
                 Time.timeScale = 1;
                 SceneManager.LoadScene(0);

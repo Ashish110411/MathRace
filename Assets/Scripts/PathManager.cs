@@ -24,8 +24,7 @@ public class PathManager : MonoBehaviour
                 SpawnTile(Random.Range(0, Path.Length));
         }
     }
-
-
+    
     void Update()
     {
         if(Player.transform.position.z - 24 > zSpawn - (numberOfTiles * TileLength))

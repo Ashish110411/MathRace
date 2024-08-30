@@ -3,61 +3,73 @@ using TMPro;
 
 public class RandomOperation : MonoBehaviour
 {
-    
     public TextMeshProUGUI xText;
-    
     public TextMeshProUGUI yText;
-    
     public TextMeshProUGUI zText;
-    public char Operator;
-    
+    public char[] ValidOperators;
 
     public void GenerateRandomEquation()
     {
-        // Generate two random integers between 1 and 100 (inclusive)
-        int x = Random.Range(1, 10);
-        int y = Random.Range(1, 10);
-
-        // Array of operators
+        int x = 0, y = 0, z = 0;
         char[] operators = new char[] { '+', '-', '*', '/' };
+        ValidOperators = new char[2]; // Array to store up to 2 valid operators
 
-        // Randomly select an operator
+        // Randomly select an operator to start with
         int operatorIndex = Random.Range(0, operators.Length);
         char selectedOperator = operators[operatorIndex];
-        Operator = selectedOperator; 
 
-        // Initialize the result variable
-        int z = 0;
-        
         switch (selectedOperator)
         {
             case '+':
+                x = Random.Range(1, 10);
+                y = Random.Range(1, 10);
                 z = x + y;
+                ValidOperators[0] = '+';
                 break;
+
             case '-':
+                x = Random.Range(1, 10);
+                y = Random.Range(1, x + 1); // Ensure y <= x to avoid negative results
                 z = x - y;
-                break;
-            case '*':
-                z = x * y;
-                break;
-            case '/':
-                // Handle division by ensuring y is not zero and x is divisible by y
-                while (y == 0 || x % y != 0)
+                ValidOperators[0] = '-';
+
+                if (x % y == 0 && x / y == z)
                 {
-                    y = Random.Range(1, 10); // Regenerate y if conditions aren't met
+                    ValidOperators[1] = '/';
                 }
-                z = x / y;
+                break;
+
+            case '*':
+                x = Random.Range(1, 10);
+                y = Random.Range(1, 10);
+                z = x * y;
+                ValidOperators[0] = '*';
+
+                if (x % y == 0 && x / y == z)
+                {
+                    ValidOperators[1] = '/';
+                }
+                break;
+
+            case '/':
+                y = Random.Range(1, 10);
+                z = Random.Range(1, 10);
+                x = y * z; // Ensure x is perfectly divisible by y
+                ValidOperators[0] = '/';
+
+                if (x - y == z) // If subtraction could also work
+                {
+                    ValidOperators[1] = '-';
+                }
                 break;
         }
 
-        // Update TextMeshPro objects with the new equation
+        // Update the TextMeshPro objects with the values
         xText.text = x.ToString();
         yText.text = y.ToString();
         zText.text = z.ToString();
-
-        // Optionally log the equation for debugging
-        // Debug.Log(x + " " + selectedOperator + " " + y + " = " + z);
     }
+
     void Start()
     {
         GenerateRandomEquation();

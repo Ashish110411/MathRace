@@ -3,30 +3,23 @@ using TMPro;
 
 public class ScoreManager : MonoBehaviour
 {
-    public TextMeshProUGUI scoreText; // Reference to the TextMeshProUGUI component
-    public int score = 0; // Class-level variable to track the score
-
+    public TextMeshProUGUI scoreText;
+    public int score = 0;
     void Start()
     {
-        UpdateScoreText(); // Initialize the score text on start
+        UpdateScoreText(); 
     }
-
     private void OnTriggerEnter(Collider other)
     {
-        // Check if the collider belongs to a specific object or layer if needed
-        // Example: if (other.CompareTag("Player"))
-
         IncrementScore(); // Call the method to increment the score
     }
-
     public void IncrementScore()
     {
-        score++; // Increment the score
-        UpdateScoreText(); // Update the score display
+        score++;
+        UpdateScoreText();
     }
-
     private void UpdateScoreText()
     {
-        scoreText.text = "Score: " + score; // Update the UI text with the current score
+        scoreText.text = "Score: " + score;
     }
 }

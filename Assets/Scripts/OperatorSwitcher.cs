@@ -4,18 +4,17 @@ using UnityEngine;
 
 public class OperatorManager : MonoBehaviour
 {
-    public GameObject[] operators;  // Array to hold the operator prefabs
-    private int currentOperatorIndex = 0; // Index to track the current operator
-    private GameObject activeOperator;    // Currently active operator object
+    public GameObject[] operators;
+    private int currentOperatorIndex = 0;
+    private GameObject activeOperator;
     
     void Start()
     {
         activeOperator = Instantiate(operators[currentOperatorIndex], transform.position, Quaternion.identity, transform);
     }
-
     void Update()
     {
-        if (Input.GetMouseButtonDown(0)) // Detects a left mouse click or screen tap
+        if (Input.GetMouseButtonDown(0))
         {
             ChangeOperator();
         }
@@ -23,11 +22,8 @@ public class OperatorManager : MonoBehaviour
 
     void ChangeOperator()
     {
-        Destroy(activeOperator); // Remove the current operator
-
-        currentOperatorIndex = (currentOperatorIndex + 1) % operators.Length; // Move to the next operator
-
-        // Instantiate the next operator
+        Destroy(activeOperator);
+        currentOperatorIndex = (currentOperatorIndex + 1) % operators.Length;
         activeOperator = Instantiate(operators[currentOperatorIndex], transform.position, Quaternion.identity, transform);
     }
 
