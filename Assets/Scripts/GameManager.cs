@@ -19,7 +19,7 @@ public class GameManager : MonoBehaviour
             {
                 gameoverScript.SetActive(false);
                 Time.timeScale = 1;
-                SceneManager.LoadScene(0);
+                SceneManager.LoadScene(1);
             }
         }
         
